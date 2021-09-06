@@ -1,0 +1,13 @@
+stages:
+- build  
+
+build_job:
+  stage: build
+  only:
+  - branches
+  script:
+  - '& "D:\Study\Semestr 7\Tools\nuget\nuget.exe" restore'
+  - '& "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe" Lab1_2.sln'
+  artifacts:
+    paths:
+    - 'Lab1_2\bin\Debug\Lab1_2.exe'
